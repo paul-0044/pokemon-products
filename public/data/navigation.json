@@ -1,0 +1,365 @@
+{
+  "main_menu": [
+    {
+      "label": "Home 🏠",
+      "url": "/",
+      "children": []
+    },
+    {
+      "label": "Custom Boxes",
+      "url": "/collections/custom-boxes",
+      "children": [
+        {
+          "label": "Custom Boxes",
+          "url": "/collections/custom-boxes"
+        },
+        {
+          "label": "Sealed Product",
+          "url": "/collections/sealed-product"
+        },
+        {
+          "label": "Single Cards",
+          "url": "/collections/single-cards"
+        },
+        {
+          "label": "Graded Cards",
+          "url": "/collections/graded-pokemon-cards"
+        },
+        {
+          "label": "Pre-Orders",
+          "url": "/collections/pre-orders"
+        },
+        {
+          "label": "Booster Packs",
+          "url": "/collections/pokemon-booster-packs"
+        },
+        {
+          "label": "Booster Boxes",
+          "url": "/collections/pokemon-booster-boxes"
+        },
+        {
+          "label": "Elite Trainer Boxes",
+          "url": "/collections/pokemonelitetrainerbox"
+        },
+        {
+          "label": "Japanese Pokemon TCG",
+          "url": "/collections/japanese-pokemon-tcg"
+        },
+        {
+          "label": "Korean Pokemon TCG",
+          "url": "/collections/korean-pokemon-cards"
+        },
+        {
+          "label": "Chinese Pokemon TCG",
+          "url": "/collections/chinese-pokemon-tcg"
+        }
+      ]
+    },
+    {
+      "label": "Custom Boxes",
+      "url": "/collections/custom-boxes",
+      "children": []
+    },
+    {
+      "label": "Sealed Product",
+      "url": "/collections/sealed-product",
+      "children": []
+    },
+    {
+      "label": "Single Cards",
+      "url": "/collections/single-cards",
+      "children": []
+    },
+    {
+      "label": "Graded Cards",
+      "url": "/collections/graded-pokemon-cards",
+      "children": []
+    },
+    {
+      "label": "Pre-Orders",
+      "url": "/collections/pre-orders",
+      "children": []
+    },
+    {
+      "label": "Booster Packs",
+      "url": "/collections/pokemon-booster-packs",
+      "children": []
+    },
+    {
+      "label": "Booster Boxes",
+      "url": "/collections/pokemon-booster-boxes",
+      "children": []
+    },
+    {
+      "label": "Elite Trainer Boxes",
+      "url": "/collections/pokemonelitetrainerbox",
+      "children": []
+    },
+    {
+      "label": "Japanese Pokemon TCG",
+      "url": "/collections/japanese-pokemon-tcg",
+      "children": []
+    },
+    {
+      "label": "Korean Pokemon TCG",
+      "url": "/collections/korean-pokemon-cards",
+      "children": []
+    },
+    {
+      "label": "Chinese Pokemon TCG",
+      "url": "/collections/chinese-pokemon-tcg",
+      "children": []
+    },
+    {
+      "label": "One Piece TCG",
+      "url": "/collections/one-piece-tcg",
+      "children": [
+        {
+          "label": "One Piece TCG",
+          "url": "/collections/one-piece-tcg"
+        },
+        {
+          "label": "Yu-Gi-Oh!",
+          "url": "/collections/yu-gi-oh-tcg"
+        },
+        {
+          "label": "Dragon Ball TCG",
+          "url": "/collections/dragon-ball-tcg"
+        },
+        {
+          "label": "Naruto TCG",
+          "url": "/collections/naruto-tcg"
+        },
+        {
+          "label": "Flesh & Blood TCG",
+          "url": "/collections/flesh-blood-tcg"
+        },
+        {
+          "label": "Riftbound TCG",
+          "url": "/collections/riftbound-tcg"
+        },
+        {
+          "label": "Sports Cards",
+          "url": "/collections/sports-cards"
+        }
+      ]
+    },
+    {
+      "label": "One Piece TCG",
+      "url": "/collections/one-piece-tcg",
+      "children": []
+    },
+    {
+      "label": "Yu-Gi-Oh!",
+      "url": "/collections/yu-gi-oh-tcg",
+      "children": []
+    },
+    {
+      "label": "Dragon Ball TCG",
+      "url": "/collections/dragon-ball-tcg",
+      "children": []
+    },
+    {
+      "label": "Naruto TCG",
+      "url": "/collections/naruto-tcg",
+      "children": []
+    },
+    {
+      "label": "Flesh & Blood TCG",
+      "url": "/collections/flesh-blood-tcg",
+      "children": []
+    },
+    {
+      "label": "Riftbound TCG",
+      "url": "/collections/riftbound-tcg",
+      "children": []
+    },
+    {
+      "label": "Sports Cards",
+      "url": "/collections/sports-cards",
+      "children": []
+    },
+    {
+      "label": "TCG Accessories 💼",
+      "url": "/collections/supplies-premier-trading-cards",
+      "children": []
+    },
+    {
+      "label": "Funko POP & Figures 🗿",
+      "url": "/collections/funko-pop",
+      "children": []
+    },
+    {
+      "label": "All Video Games",
+      "url": "/collections/video-games",
+      "children": [
+        {
+          "label": "All Video Games",
+          "url": "/collections/video-games"
+        },
+        {
+          "label": "The Video Game Box",
+          "url": "/products/mystery-video-game-test-your-luck"
+        }
+      ]
+    },
+    {
+      "label": "All Video Games",
+      "url": "/collections/video-games",
+      "children": []
+    },
+    {
+      "label": "The Video Game Box",
+      "url": "/products/mystery-video-game-test-your-luck",
+      "children": []
+    },
+    {
+      "label": "All Snacks",
+      "url": "/collections/international-snacks",
+      "children": [
+        {
+          "label": "All Snacks",
+          "url": "/collections/international-snacks"
+        },
+        {
+          "label": "International Snack Box",
+          "url": "/products/international-snack-box-candy-chocolate-monthly-box"
+        },
+        {
+          "label": "Japan Crate",
+          "url": "/products/japan-crate"
+        }
+      ]
+    },
+    {
+      "label": "All Snacks",
+      "url": "/collections/international-snacks",
+      "children": []
+    },
+    {
+      "label": "International Snack Box",
+      "url": "/products/international-snack-box-candy-chocolate-monthly-box",
+      "children": []
+    },
+    {
+      "label": "Japan Crate",
+      "url": "/products/japan-crate",
+      "children": []
+    },
+    {
+      "label": "Manga 📕",
+      "url": "/collections/manga",
+      "children": []
+    },
+    {
+      "label": "Gundam 🤖",
+      "url": "/collections/gundam",
+      "children": []
+    },
+    {
+      "label": "Plushies 🧸",
+      "url": "/collections/plushies",
+      "children": []
+    },
+    {
+      "label": "Lego 🧱",
+      "url": "/collections/lego",
+      "children": []
+    },
+    {
+      "label": "BEST SELLERS 💵",
+      "url": "/collections/best-sellers",
+      "children": []
+    },
+    {
+      "label": "NEWEST ARRIVALS ⚡",
+      "url": "/collections/newest-arrivals",
+      "children": []
+    },
+    {
+      "label": "ON SALE 🔥",
+      "url": "/collections/on-sale",
+      "children": []
+    },
+    {
+      "label": "Sell Your Cards 💰",
+      "url": "https://forms.gle/beubNiAAXvnJmCAM6",
+      "children": []
+    },
+    {
+      "label": "LIVESTREAM 🔴",
+      "url": "https://www.whatnot.com/invite/ptccollectibles",
+      "children": []
+    },
+    {
+      "label": "Wholesale 🌍",
+      "url": "https://faire.com/direct/ptccollectibles",
+      "children": []
+    },
+    {
+      "label": "TCGfolio App 📱",
+      "url": "https://tcgfolioapp.lovable.app",
+      "children": []
+    },
+    {
+      "label": "Shop ALL 🛒",
+      "url": "/collections",
+      "children": []
+    }
+  ],
+  "footer_menu": [
+    {
+      "label": "Facebook",
+      "url": "https://www.facebook.com/PTCCollectibles/"
+    },
+    {
+      "label": "Instagram",
+      "url": "https://www.instagram.com/ptccollectibles/"
+    },
+    {
+      "label": "YouTube",
+      "url": "https://www.youtube.com/@PTCCollectibles"
+    },
+    {
+      "label": "TikTok",
+      "url": "https://www.tiktok.com/@ptccollectibles"
+    },
+    {
+      "label": "Pinterest",
+      "url": "https://pinterest.com/ptccollectibles/"
+    },
+    {
+      "label": "PTC Collectibles",
+      "url": "/"
+    },
+    {
+      "label": "Refund policy",
+      "url": "/policies/refund-policy"
+    },
+    {
+      "label": "Privacy policy",
+      "url": "/policies/privacy-policy"
+    },
+    {
+      "label": "Terms of service",
+      "url": "/policies/terms-of-service"
+    },
+    {
+      "label": "Shipping policy",
+      "url": "/policies/shipping-policy"
+    },
+    {
+      "label": "Contact information",
+      "url": "/policies/contact-information"
+    },
+    {
+      "label": "Cancellation policy",
+      "url": "/policies/subscription-policy"
+    },
+    {
+      "label": "Legal notice",
+      "url": "/policies/legal-notice"
+    }
+  ],
+  "header_dropdowns": []
+}
