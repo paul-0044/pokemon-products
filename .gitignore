@@ -34,3 +34,6 @@ yarn-error.log*
 # Temporary files
 .tempmediaStorage/
 crawler_data/
+
+.vercel
+.env*

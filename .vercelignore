@@ -1,0 +1,9 @@
+node_modules
+crawler_data
+speed
+scripts
+.git
+.tempmediaStorage
+TASK_*.md
+*.sql
+*.py
