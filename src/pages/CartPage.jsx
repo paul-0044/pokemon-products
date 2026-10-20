@@ -17,7 +17,7 @@ export default function CartPage() {
   const { formatRaw } = useCurrency();
 
   return (
-    <div className="page-width" style={{ padding: '3rem 1.5rem 5rem' }}>
+    <div className="page-width animate-fade-down" style={{ padding: '2rem 1rem 5rem' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '2rem', borderBottom: '1px solid #eee', paddingBottom: '1rem' }}>
         <h1 style={{ fontSize: '2.2rem', fontWeight: 800, textTransform: 'uppercase' }}>
           Your Cart
@@ -41,7 +41,7 @@ export default function CartPage() {
           </Link>
         </div>
       ) : (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
           {/* Left: Items list */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {/* Free shipping bar */}

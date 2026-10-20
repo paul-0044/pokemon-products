@@ -4,6 +4,7 @@ import { dataService } from '../lib/supabase';
 import ProductCard from '../components/ProductCard';
 import ProductCardSkeleton from '../components/ProductCardSkeleton';
 import { ShieldCheck, Truck, Star, Award, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import initialFeatured from '../data/featuredProducts.json';
 
 const HERO_SLIDES = [
   {
@@ -65,10 +66,10 @@ const FEATURED_CATEGORIES = [
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [bestSellers, setBestSellers] = useState([]);
-  const [newArrivals, setNewArrivals] = useState([]);
-  const [boosterBoxes, setBoosterBoxes] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [bestSellers, setBestSellers] = useState(initialFeatured.bestSellers || []);
+  const [newArrivals, setNewArrivals] = useState(initialFeatured.newArrivals || []);
+  const [boosterBoxes, setBoosterBoxes] = useState(initialFeatured.boosterBoxes || []);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -78,26 +79,28 @@ export default function HomePage() {
   }, []);
 
   useEffect(() => {
+    // Background cache warm-up and sync without showing skeleton delay
     dataService
       .getProducts()
       .then((products) => {
-        setBestSellers(products.slice(0, 8));
-        setNewArrivals(products.slice(8, 16));
-        const boxes = products.filter(
-          (p) =>
-            p.title.toLowerCase().includes('booster box') ||
-            (p.product_type || '').toLowerCase().includes('booster box')
-        );
-        setBoosterBoxes(boxes.length > 0 ? boxes.slice(0, 8) : products.slice(16, 24));
-        setLoading(false);
+        if (products && products.length > 0) {
+          setBestSellers(products.slice(0, 8));
+          setNewArrivals(products.slice(8, 16));
+          const boxes = products.filter(
+            (p) =>
+              p.title.toLowerCase().includes('booster box') ||
+              (p.product_type || '').toLowerCase().includes('booster box')
+          );
+          setBoosterBoxes(boxes.length > 0 ? boxes.slice(0, 8) : products.slice(16, 24));
+        }
       })
       .catch(console.error);
   }, []);
 
   return (
-    <div>
+    <div className="home-page-container">
       {/* 1. Hero Slideshow Banner */}
-      <section className="hero-section" style={{ position: 'relative', width: '100%', overflow: 'hidden', backgroundColor: '#000' }}>
+      <section className="hero-section animate-fade-down" style={{ position: 'relative', width: '100%', overflow: 'hidden', backgroundColor: '#000' }}>
         <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
           {HERO_SLIDES.map((slide, idx) => (
             <div
@@ -242,7 +245,7 @@ export default function HomePage() {
       </section>
 
       {/* 2. Value Proposition Trust Bar */}
-      <section style={{ backgroundColor: '#f4f4f4', borderBottom: '1px solid #e0e0e0', padding: '1.25rem 0' }}>
+      <section className="animate-fade-down delay-100" style={{ backgroundColor: '#f4f4f4', borderBottom: '1px solid #e0e0e0', padding: '1.25rem 0' }}>
         <div className="page-width">
           <div className="value-props-grid">
             <div className="value-prop-item">
@@ -281,7 +284,7 @@ export default function HomePage() {
       </section>
 
       {/* 3. Featured Categories Collection Grid */}
-      <section style={{ padding: '2.5rem 0' }}>
+      <section className="animate-fade-down delay-150" style={{ padding: '2.5rem 0' }}>
         <div className="page-width">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1.25rem' }}>
             <div>
@@ -319,7 +322,7 @@ export default function HomePage() {
       </section>
 
       {/* 4. Best Sellers Section */}
-      <section style={{ padding: '2.5rem 0', backgroundColor: '#fcfcfc', borderTop: '1px solid #f0f0f0' }}>
+      <section className="animate-fade-down delay-200" style={{ padding: '2.5rem 0', backgroundColor: '#fcfcfc', borderTop: '1px solid #f0f0f0' }}>
         <div className="page-width">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
             <div>
@@ -344,7 +347,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. Spotlight Promotional Banner */}
-      <section style={{ backgroundColor: '#121212', color: '#ffffff', padding: '3rem 0', margin: '1.5rem 0' }}>
+      <section className="animate-fade-down delay-250" style={{ backgroundColor: '#121212', color: '#ffffff', padding: '3rem 0', margin: '1.5rem 0' }}>
         <div className="page-width">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', alignItems: 'center' }}>
             <div>
@@ -379,7 +382,7 @@ export default function HomePage() {
       </section>
 
       {/* 6. Newest Arrivals Section */}
-      <section style={{ padding: '2.5rem 0' }}>
+      <section className="animate-fade-down delay-300" style={{ padding: '2.5rem 0' }}>
         <div className="page-width">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
             <div>
@@ -404,7 +407,7 @@ export default function HomePage() {
       </section>
 
       {/* 7. Pokémon Booster Boxes Section */}
-      <section style={{ padding: '2.5rem 0', backgroundColor: '#fcfcfc', borderTop: '1px solid #f0f0f0' }}>
+      <section className="animate-fade-down delay-350" style={{ padding: '2.5rem 0', backgroundColor: '#fcfcfc', borderTop: '1px solid #f0f0f0' }}>
         <div className="page-width">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
             <div>
@@ -429,7 +432,7 @@ export default function HomePage() {
       </section>
 
       {/* 8. Judge.me Customer Reviews Section */}
-      <section style={{ padding: '3rem 0', backgroundColor: '#edf5f5', borderTop: '1px solid #d8e5e5' }}>
+      <section className="animate-fade-down delay-400" style={{ padding: '3rem 0', backgroundColor: '#edf5f5', borderTop: '1px solid #d8e5e5' }}>
         <div className="page-width">
           <div style={{ textAlign: 'center', maxWidth: '650px', margin: '0 auto 2rem' }}>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '3px', marginBottom: '0.4rem' }}>
@@ -445,7 +448,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+          <div className="reviews-grid">
             {[
               {
                 name: 'Alex M.',

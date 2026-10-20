@@ -11,7 +11,9 @@ export const supabase = isSupabaseConfigured
 
 // In-memory cache for fast snappy browsing
 let cachedProducts = null;
+let productsPromise = null;
 let cachedCollections = null;
+let collectionsPromise = null;
 let cachedCollectionMap = null;
 let cachedNavigation = null;
 let cachedPages = null;
@@ -20,24 +22,34 @@ let cachedPolicies = null;
 export const dataService = {
   async getProducts() {
     if (cachedProducts) return cachedProducts;
+    if (productsPromise) return productsPromise;
 
-    if (isSupabaseConfigured) {
-      try {
-        const { data, error } = await supabase.from('products').select('*');
-        if (!error && data && data.length > 0) {
-          cachedProducts = data;
-          return data;
+    productsPromise = (async () => {
+      if (isSupabaseConfigured) {
+        try {
+          const { data, error } = await supabase.from('products').select('*');
+          if (!error && data && data.length > 0) {
+            cachedProducts = data;
+            return data;
+          }
+        } catch (err) {
+          console.warn('Supabase fetch failed, falling back to local dataset', err);
         }
-      } catch (err) {
-        console.warn('Supabase fetch failed, falling back to local dataset', err);
       }
-    }
 
-    // Offline / pre-crawled fallback
-    const res = await fetch('/data/products.json');
-    const data = await res.json();
-    cachedProducts = data;
-    return data;
+      // Offline / pre-crawled fallback
+      try {
+        const res = await fetch('/data/products.json');
+        const data = await res.json();
+        cachedProducts = data;
+        return data;
+      } catch (err) {
+        console.error('Failed to load products.json', err);
+        return [];
+      }
+    })();
+
+    return productsPromise;
   },
 
   async getProductByHandle(handle) {
@@ -47,23 +59,33 @@ export const dataService = {
 
   async getCollections() {
     if (cachedCollections) return cachedCollections;
+    if (collectionsPromise) return collectionsPromise;
 
-    if (isSupabaseConfigured) {
-      try {
-        const { data, error } = await supabase.from('collections').select('*');
-        if (!error && data && data.length > 0) {
-          cachedCollections = data;
-          return data;
+    collectionsPromise = (async () => {
+      if (isSupabaseConfigured) {
+        try {
+          const { data, error } = await supabase.from('collections').select('*');
+          if (!error && data && data.length > 0) {
+            cachedCollections = data;
+            return data;
+          }
+        } catch (err) {
+          console.warn('Supabase fetch failed, falling back to local dataset', err);
         }
-      } catch (err) {
-        console.warn('Supabase fetch failed, falling back to local dataset', err);
       }
-    }
 
-    const res = await fetch('/data/collections.json');
-    const data = await res.json();
-    cachedCollections = data;
-    return data;
+      try {
+        const res = await fetch('/data/collections.json');
+        const data = await res.json();
+        cachedCollections = data;
+        return data;
+      } catch (err) {
+        console.error('Failed to load collections.json', err);
+        return [];
+      }
+    })();
+
+    return collectionsPromise;
   },
 
   async getCollectionByHandle(handle) {

@@ -44,7 +44,7 @@ export default function CustomPage() {
   };
 
   return (
-    <div className="page-width" style={{ padding: '2.5rem 1.5rem 5rem', maxWidth: '960px' }}>
+    <div className="page-width animate-fade-down" style={{ padding: '2rem 1rem 5rem', maxWidth: '960px' }}>
       {/* Breadcrumb */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.825rem', color: '#666', marginBottom: '2rem' }}>
         <Link to="/" style={{ color: '#121212' }}>Home</Link>

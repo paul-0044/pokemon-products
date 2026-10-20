@@ -178,7 +178,7 @@ export default function CollectionsPage() {
   // If user visits /collections without handle, show 35 collections directory
   if (!handle && !searchQuery) {
     return (
-      <div className="page-width" style={{ padding: '2.5rem 1rem 4rem' }}>
+      <div className="page-width animate-fade-down" style={{ padding: '2.5rem 1rem 4rem' }}>
         <div style={{ marginBottom: '2rem' }}>
           <h1 style={{ fontSize: '1.85rem', fontWeight: 800, textTransform: 'uppercase' }}>
             All Collections
@@ -221,7 +221,7 @@ export default function CollectionsPage() {
   }
 
   return (
-    <div className="page-width" style={{ padding: '1.75rem 0.85rem 4rem' }}>
+    <div className="page-width animate-fade-down" style={{ padding: '1.75rem 0.85rem 4rem' }}>
       {/* Breadcrumb */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem', color: '#666', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
         <Link to="/" style={{ color: '#121212' }}>Home</Link>

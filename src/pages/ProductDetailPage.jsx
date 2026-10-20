@@ -99,36 +99,24 @@ export default function ProductDetailPage() {
   };
 
   return (
-    <div className="page-width" style={{ padding: '2rem 1.5rem 4rem' }}>
+    <div className="page-width animate-fade-down" style={{ padding: '1.5rem 0.85rem 4rem' }}>
       {/* Breadcrumbs */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.825rem', color: '#666', marginBottom: '2rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem', color: '#666', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
         <Link to="/" style={{ color: '#121212' }}>Home</Link>
-        <ChevronRight size={14} />
+        <ChevronRight size={13} />
         <Link to="/collections" style={{ color: '#121212' }}>Collections</Link>
-        <ChevronRight size={14} />
-        <span style={{ color: '#e22120', fontWeight: 600, maxWidth: '400px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+        <ChevronRight size={13} />
+        <span style={{ color: '#e22120', fontWeight: 600, maxWidth: '240px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
           {product.title}
         </span>
       </div>
 
       {/* Main Product Layout */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '3.5rem', marginBottom: '4rem' }}>
+      <div className="pdp-main-grid">
         {/* Left: Product Media Gallery */}
         <div>
           {/* Main Hero Image */}
-          <div
-            style={{
-              position: 'relative',
-              backgroundColor: '#fafafa',
-              border: '1px solid #e5e5e5',
-              padding: '1.5rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              minHeight: '420px',
-              marginBottom: '1rem'
-            }}
-          >
+          <div className="pdp-image-container">
             {isOnSale && (
               <span className="badge badge-sale" style={{ position: 'absolute', top: '1rem', left: '1rem' }}>
                 Save ${savings} USD
@@ -326,7 +314,7 @@ export default function ProductDetailPage() {
 
       {/* Tabs: Description, Shipping & Authenticity Policy */}
       <div style={{ borderTop: '1px solid #eee', paddingTop: '2.5rem', marginBottom: '4rem' }}>
-        <div style={{ display: 'flex', gap: '2rem', borderBottom: '1px solid #ddd', marginBottom: '1.5rem' }}>
+        <div style={{ display: 'flex', gap: '1.5rem', borderBottom: '1px solid #ddd', marginBottom: '1.5rem', overflowX: 'auto', scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' }}>
           {[
             { id: 'description', label: 'Product Description' },
             { id: 'shipping', label: 'Shipping & Delivery' },
@@ -337,7 +325,7 @@ export default function ProductDetailPage() {
               onClick={() => setActiveTab(tab.id)}
               style={{
                 paddingBottom: '0.75rem',
-                fontSize: '1rem',
+                fontSize: '0.95rem',
                 fontWeight: 700,
                 color: activeTab === tab.id ? '#e22120' : '#666',
                 borderBottom: activeTab === tab.id ? '2px solid #e22120' : '2px solid transparent',
@@ -345,7 +333,9 @@ export default function ProductDetailPage() {
                 borderTop: 'none',
                 borderLeft: 'none',
                 borderRight: 'none',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                whiteSpace: 'nowrap',
+                flexShrink: 0
               }}
             >
               {tab.label}

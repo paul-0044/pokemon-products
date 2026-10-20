@@ -43,7 +43,7 @@ export default function AnnouncementBar() {
 
       {/* Currency Switcher */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-        <span style={{ fontSize: '0.75rem', color: '#999' }}>Country/region:</span>
+        <span className="currency-label-desktop" style={{ fontSize: '0.75rem', color: '#999' }}>Country/region:</span>
         <select
           value={currency}
           onChange={(e) => setCurrency(e.target.value)}

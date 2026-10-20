@@ -91,7 +91,7 @@ export default function ProductCard({ product }) {
       </Link>
 
       {/* Quick Add Button */}
-      <div style={{ padding: '0 1rem 1rem' }}>
+      <div className="product-card-action">
         <button
           onClick={handleQuickAdd}
           className="btn btn-outline btn-sm btn-full"

@@ -249,8 +249,8 @@ export default function CheckoutPage() {
       </header>
 
       {/* Main 2-Column Checkout Layout */}
-      <div className="page-width animate-fade-down" style={{ padding: '2rem 1.5rem 5rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3.5rem', alignItems: 'start' }}>
+      <div className="page-width animate-fade-down" style={{ padding: '1.5rem 0.85rem 4rem' }}>
+        <div className="checkout-layout-grid">
           {/* Left Column: Form & Inputs */}
           <div>
             <form onSubmit={handlePlaceOrder}>
